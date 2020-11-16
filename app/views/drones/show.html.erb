@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @drone.name %>
+</p>
+
+<% @drone.moves.each do |move| %>
+  <p>
+    Action: <%= move.action %>
+    Result position: 
+  </p>
+<% end %>
+
+<%= link_to 'Edit', edit_drone_path(@drone) %> |
+<%= link_to 'Back', drones_path %>
