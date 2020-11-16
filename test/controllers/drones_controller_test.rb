@@ -17,10 +17,10 @@ class DronesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create drone" do
     assert_difference('Drone.count') do
-      post drones_url, params: { drone: { name: @drone.name } }
+      post drones_url, params: { drone: { name: "Teste" } }
     end
 
-    assert_redirected_to drone_url(Drone.last)
+    assert_redirected_to new_move_url(drone: Drone.last)
   end
 
   test "should show drone" do
@@ -34,7 +34,7 @@ class DronesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update drone" do
-    patch drone_url(@drone), params: { drone: { name: @drone.name } }
+    patch drone_url(@drone), params: { drone: { name: "New name" } }
     assert_redirected_to drone_url(@drone)
   end
 

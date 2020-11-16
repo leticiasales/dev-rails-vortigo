@@ -1,11 +1,73 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  action: MyString
-  cancelled: false
+  action: NNNNNLLLLL # (5, 5)
   drone: one
 
 two:
-  action: MyString
-  cancelled: false
+  action: NLNLNLNLNL # (5, 5)
+  drone: one
+
+three:
+  action: NNNNNXLLLLLX # (4, 4)
+  drone: one
+
+four:
+  action: SSSSSOOOOO # (-5, -5)
+  drone: one
+
+five:
+  action: S5O5 # (-5, -5)
+  drone: one
+
+six:
+  action: NNX2 # (999, 999)
+  drone: one
+
+seven:
+  action: N123LSX # (1, 123)
+  drone: one
+
+eight:
+  action: NLS3X # (1, 1)
+  drone: one
+
+nine:
+  action: NNNXLLLXX # (1, 2)
+  drone: one
+
+ten:
+  action: N40L30S20O10NLSOXX # (21, 21)
+  drone: one
+
+eleven:
+  action: NLSOXXN40L30S20O10 # (21, 21)
+  drone: one
+
+twelve:
+  action: nula # (999, 999)
+  drone: one
+
+thirteen:
+  action: vazia # (999, 999)
+  drone: one
+
+fourteen:
+  action: espaços em branco # (999, 999)
+  drone: two
+
+fifteen:
+  action: 123N # (999, 999)
+  drone: two
+
+sixteen:
+  action: N2147483647N # (999, 999)
+  drone: two
+
+seventeen:
+  action: NNI # (999, 999)
+  drone: two
+
+eighteen:
+  action: N2147483647XN # (0, 1)
   drone: two

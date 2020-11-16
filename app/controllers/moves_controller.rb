@@ -14,7 +14,7 @@ class MovesController < ApplicationController
 
   # GET /moves/new
   def new
-    @drone = Drone.find(params[:drone])
+    @drone = params[:drone] ? Drone.find(params[:drone]) : Drone.last
     @move = Move.new
   end
 

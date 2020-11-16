@@ -8,7 +8,7 @@
 <% @drone.moves.each do |move| %>
   <p>
     Action: <%= move.action %>
-    Result position: 
+    Result position: <%= result(move.action) %>
   </p>
 <% end %>
 
