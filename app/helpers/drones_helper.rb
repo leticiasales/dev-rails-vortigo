@@ -11,7 +11,10 @@ module DronesHelper
       puts("\n\n")
       puts("char: " + char)
 
-      if ["N", "S", "L", "O"].include? char
+      if char == "X"
+        move = ""
+        count = ""
+      elsif ["N", "S", "L", "O"].include? char
         case move
           when "N"
             y = y + count.to_i
@@ -24,11 +27,11 @@ module DronesHelper
         end
 
         move = char
-        substring = action[idx + 1..0]
+        substring = action.from(idx + 1)
         step = 0
-        count = ''
+        count = ""
 
-        while !["N", "S", "L", "O", "X"].include? substring[step]
+        while substring[step] and !["N", "S", "L", "O", "X"].include? substring[step]
           if substring[step].to_i.to_s == substring[step]
             count = count + substring[step]
             step = step + 1
@@ -37,23 +40,24 @@ module DronesHelper
           end
         end
 
-        count = count.to_i > 0 ? count.to_i : 1
+        puts "count: " + count
+        count = count.empty? ? 1 : count.to_i
       end
-
-      puts "(#{x}, #{y})"
-
-      case action[-1]
-        when "N"
-          y = y + count.to_i
-        when "S"
-          y = y - count.to_i
-        when "L"
-          x = x + count.to_i
-        when "O"
-          x = x - count.to_i
-      end
-
-      return "(#{x}, #{y})"
     end
+
+    puts "(#{x}, #{y})"
+
+    case move
+      when "N"
+        y = y + count.to_i
+      when "S"
+        y = y - count.to_i
+      when "L"
+        x = x + count.to_i
+      when "O"
+        x = x - count.to_i
+    end
+
+    return "(#{x}, #{y})"
   end
 end
