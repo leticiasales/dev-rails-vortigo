@@ -32,5 +32,9 @@ jobs:
         ruby-version: 2.6
     - name: Install dependencies
       run: bundle install
+    - name: Setup database
+      env:
+        RAILS_ENV: test
+      run: rails db:setup && rails db:seed
     - name: Run tests
       run: rails test
