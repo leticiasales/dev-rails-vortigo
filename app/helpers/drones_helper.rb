@@ -42,6 +42,8 @@ module DronesHelper
 
         puts "count: " + count
         count = count.empty? ? 1 : count.to_i
+      elsif char != char.to_i.to_s    
+        return "(999, 999)"
       end
     end
 
