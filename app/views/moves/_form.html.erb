@@ -11,16 +11,16 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :action %>
-    <%= form.text_field :action %>
+    <%= form.text_field :action, :class => "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.collection_select :drone_id, Drone.order(:name), :id, :name, :selected => params[:drone] %>
+  <div class="form-group d-none">
+    <%= form.collection_select :drone_id, Drone.order(:name), :id, :name, :selected => params[:drone], :class => "form-control" %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Move drone!", :class => "btn btn-primary" %>
   </div>
 <% end %>

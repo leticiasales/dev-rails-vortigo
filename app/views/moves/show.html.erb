@@ -6,14 +6,10 @@
 </p>
 
 <p>
-  <strong>Cancelled:</strong>
-  <%= @move.cancelled %>
-</p>
-
-<p>
   <strong>Drone:</strong>
-  <%= @move.drone_id %>
+  <%= @move.drone.name %>
 </p>
 
-<%= link_to 'Edit', edit_move_path(@move) %> |
-<%= link_to 'Back', moves_path %>
+<%= link_to 'Edit move', edit_move_path(@move), :class => "btn btn-primary"%> 
+
+<%= link_to 'Destroy move', @move, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %>

@@ -1,15 +1,40 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>App</title>
+    <title>Drone simulator</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+    <link href="https://fonts.googleapis.com/css2?family=Goldman&display=swap" rel="stylesheet">
+    
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light mb-2">
+        <a class="navbar-brand" href="/">
+          <%= image_tag("drone_icon.png", :alt => "drone icon", :width => "30", :height => "30", :loading => "lazy") %>
+        </a>
+        <div class="collapse navbar-collapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item<%= current_page?drones_path ? ' current' : ''%>">
+              <%= link_to "Drones", drones_path, :class => "nav-link" %>
+            </li>
+            <li class="nav-item<%= current_page?moves_path ? ' current' : ''%>">
+              <%= link_to "Moves", moves_path, :class => "nav-link" %>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <header class="mb-4"></header>
+      <%= yield %>
+    </div>
   </body>
 </html>

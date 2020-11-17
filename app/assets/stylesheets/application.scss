@@ -14,3 +14,15 @@
  *= require_tree .
  *= require_self
  */
+ 
+h1, h2, h3, h4 {
+  font-family: 'Goldman', cursive;
+}
+
+header { 
+  height: 200px;
+  border-radius: 8px;
+  background-size: cover;
+  background-position: center -60px;
+  background-image: image-url('drone_bg.jpg'); 
+}

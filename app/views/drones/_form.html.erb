@@ -11,12 +11,14 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class="form-group">
+    <%= form.text_field :name, :class => "form-control" %>
+    <small class="form-text text-muted">Create or find your drone by name</small>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="form-group">
+    <div class="actions f-right">
+      <%= form.submit "Go to moves!", :class => "btn btn-primary" %>
+    </div>
   </div>
 <% end %>
