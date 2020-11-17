@@ -8,9 +8,6 @@ module DronesHelper
     count = ''
 
     chars.each_with_index do |char, idx|
-      puts("\n\n")
-      puts("char: " + char)
-
       if char == "X"
         move = ""
         count = ""
