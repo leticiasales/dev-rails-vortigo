@@ -38,7 +38,9 @@ jobs:
         yarn install
     - name: Setup database
       env:
+        RAILS_ENV: test
         PGHOST: localhost
-      run: rails db:setup && rails db:seed
+        POSTGRES_PASSWORD: postgres
+      run: rails db:setup
     - name: Run tests
       run: rails test
