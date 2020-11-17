@@ -1,32 +1,52 @@
 # Vortigo - Teste prático - Ruby on Rails
 
-  ## Contexto:
+## Overview
 
-  Implementar uma página web para o controle de posição de um drone em um plano cartesiano (X, Y).
+This application was developed as a test to show programming habilities.
 
-  Essa página deve conter um campo de texto para receber a string de entrada, um botão de enviar coordenadas e, conforme achar melhor, deve responder o plano cartesiano calculado.
+The first screen is a drone selection, where you can create a new drone or select the existing one with the name you typed. Then, you can insert an action on the second screen and see, after you confirm, the result position, as long with the other actions added for that drone.
 
-  O ponto inicial do drone é `(0, 0)` para cada execução.
+## Running
 
-  A string de entrada pode conter os seguintes caracteres **N**, **S**, **L**, e **O** representando **Norte**, **Sul**, **Leste** e **Oeste** respectivamente.
- Estes catacteres podem estar presentes aleatóriamente na string de entrada.
- Uma string de entrada `NNNLLL` irá resultar em uma posição final `(3, 3)`, assim como uma string `NLNLNL` irá resultar em `(3, 3)`.
+### Tests
 
-  Caso o caracter **X** esteja presente, o mesmo irá cancelar a operação anterior. 
- Caso houver mais de um caracter X consecutivo, o mesmo cancelará mais de uma ação na quantidade em que o X estiver presente.
- Uma string de entrada `NNNXLLLXX` irá resultar em uma posição final `(1, 2)` pois a string poderia ser simplificada para `NNL`.
+> docker-compose run --rm web rails test
 
-  Além disso, um número pode estar presente após o caracter da operação, representando o "passo" que a operação deve acumular.
- Este número deve estar compreendido entre `1` e `2147483647`.
- Deve-se observar que a operação `X` não suporta opção de *passo* e deve ser considerado inválido. Uma string de entrada `NNX2` deve ser considerada inválida.
- Uma string de entrada `N123LSX` irá resultar em uma posição final `(1, 123)` pois a string pode ser simplificada para `N123L`
- Uma string de entrada `NLS3X` irá resultar em uma posição final `(1, 1)` pois a string pode ser siplificada para `NL`.
+### Web
 
-  Caso a string de entrada seja inválida ou tenha algum outro problema, o resultado deve ser `(999, 999)`.
+> docker-compose up web
 
-  ## Dica:
+Access on http://localhost:3000
 
-  Os teste unitários esperados são:
+## Instructions (In Portuguese)
+
+### Contexto:
+
+Implementar uma página web para o controle de posição de um drone em um plano cartesiano (X, Y).
+
+Essa página deve conter um campo de texto para receber a string de entrada, um botão de enviar coordenadas e, conforme achar melhor, deve responder o plano cartesiano calculado.
+
+O ponto inicial do drone é `(0, 0)` para cada execução.
+
+A string de entrada pode conter os seguintes caracteres **N**, **S**, **L**, e **O** representando **Norte**, **Sul**, **Leste** e **Oeste** respectivamente.
+Estes catacteres podem estar presentes aleatóriamente na string de entrada.
+Uma string de entrada `NNNLLL` irá resultar em uma posição final `(3, 3)`, assim como uma string `NLNLNL` irá resultar em `(3, 3)`.
+
+Caso o caracter **X** esteja presente, o mesmo irá cancelar a operação anterior. 
+Caso houver mais de um caracter X consecutivo, o mesmo cancelará mais de uma ação na quantidade em que o X estiver presente.
+Uma string de entrada `NNNXLLLXX` irá resultar em uma posição final `(1, 2)` pois a string poderia ser simplificada para `NNL`.
+
+Além disso, um número pode estar presente após o caracter da operação, representando o "passo" que a operação deve acumular.
+Este número deve estar compreendido entre `1` e `2147483647`.
+Deve-se observar que a operação `X` não suporta opção de *passo* e deve ser considerado inválido. Uma string de entrada `NNX2` deve ser considerada inválida.
+Uma string de entrada `N123LSX` irá resultar em uma posição final `(1, 123)` pois a string pode ser simplificada para `N123L`
+Uma string de entrada `NLS3X` irá resultar em uma posição final `(1, 1)` pois a string pode ser siplificada para `NL`.
+
+Caso a string de entrada seja inválida ou tenha algum outro problema, o resultado deve ser `(999, 999)`.
+
+### Dica:
+
+Os teste unitários esperados são:
  ```
  Quando a string de entrada for: NNNNNLLLLL
  O retorno esperado é: (5, 5)
@@ -73,7 +93,7 @@
  Quando a string de entrada for: 123N
  O retorno esperado é: (999, 999)
 
- Quando a string de entrada for: N2147483647N
+ Quando a string de entrada for: N2147483647N (*This test was modified)
  O retorno esperado é: (999, 999)
 
  Quando a string de entrada for: NNI
