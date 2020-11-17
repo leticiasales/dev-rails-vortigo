@@ -5,3 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+drones = Drone.create([{ name: 'Doctor' }, { name: 'Donna' }])
+
+moves = Move.create([{drone_id: 1, action: "NLNLSSNL4L"}])

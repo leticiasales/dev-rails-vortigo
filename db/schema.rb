@@ -23,7 +23,6 @@ ActiveRecord::Schema.define(version: 2020_11_15_020734) do
 
   create_table "moves", force: :cascade do |t|
     t.string "action", null: false
-    t.boolean "cancelled", default: false, null: false
     t.bigint "drone_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

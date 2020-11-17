@@ -12,6 +12,15 @@ The first screen is a drone selection, where you can create a new drone or selec
 
 > docker-compose run --rm web rails test
 
+
+### Setup database
+
+> docker-compose run --rm web rails db:setup
+
+Seeding (optional)
+
+> docker-compose run --rm web rails db:seed
+
 ### Web
 
 > docker-compose up web
