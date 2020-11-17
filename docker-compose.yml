@@ -10,6 +10,8 @@ services:
     build: .
     volumes:
       - .:/app
+    environment:
+      - PG_HOST=db
     ports:
       - "3000:3000"
     depends_on:
